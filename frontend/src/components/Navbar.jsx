@@ -9,6 +9,7 @@ import { useColorMode } from '../theme/ColorModeContext';
 const navItems = [
     { label: 'home', id: 'home' },
     { label: 'about', id: 'about' },
+    { label: 'certifications', id: 'certifications' },
     { label: 'projects', id: 'projects' },
     { label: 'skills', id: 'skills' },
     { label: 'contact', id: 'contact' },

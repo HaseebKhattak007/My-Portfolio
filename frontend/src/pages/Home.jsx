@@ -12,6 +12,8 @@ import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Certificate from '../components/Certificate';
+
 
 const Home = () => {
     const [projects, setProjects] = useState([]);
@@ -324,6 +326,14 @@ const Home = () => {
                             </Grid>
                         ))}
                     </Grid>
+                </Container>
+            </Box>
+
+            {/* Certifications Section */}
+            <Box id="certifications" sx={{ py: { xs: 15, md: 25 } }}>
+                <Container maxWidth="lg">
+                    <SectionTitle title="Certifications" subtitle="Professional certifications and training" />
+                    <Certificate />
                 </Container>
             </Box>
 
