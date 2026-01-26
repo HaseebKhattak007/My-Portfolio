@@ -11,7 +11,7 @@ const Certificate = () => {
     const certificateInfo = {
         organization: "NAVTCC",
         course: "FULL STACK DEVELOPMENT (MERN)",
-        duration: "April 2025 to July 2025"
+        duration: "April 2025 - July 2025"
     };
 
     return (
@@ -97,7 +97,7 @@ const Certificate = () => {
                         </Stack>
 
                         <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, maxWidth: 600 }}>
-                            Successfully completed rigorous professional training in Modern Web Development,
+                            Successfully completed professional training in Modern Web Development,
                             mastering the MERN stack (MongoDB, Express.js, React, Node.js) and
                             advanced software engineering principles.
                         </Typography>
