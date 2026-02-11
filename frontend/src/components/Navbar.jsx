@@ -42,7 +42,7 @@ const Navbar = () => {
     };
 
     const handleDownloadCV = () => {
-        window.open(`http://localhost:5000/api/download-resume`, '_blank');
+        window.open(`${process.env.PUBLIC_URL}/files/resume.pdf`, '_blank');
     };
 
     return (

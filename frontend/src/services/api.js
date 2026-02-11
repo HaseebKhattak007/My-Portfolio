@@ -1,11 +1,22 @@
-import axios from 'axios';
+import { projects, skills } from '../data/portfolioData';
 
-const API = axios.create({
-    baseURL: 'http://localhost:5000/api',
-});
+// Mock API calls to use local data
+export const fetchProjects = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve({ data: projects }), 500);
+    });
+};
 
-export const fetchProjects = () => API.get('/projects');
-export const fetchSkills = () => API.get('/skills');
-export const sendMessage = (messageData) => API.post('/messages', messageData);
+export const fetchSkills = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve({ data: skills }), 500);
+    });
+};
 
-export default API;
+// This will be replaced by direct EmailJS call in the component
+export const sendMessage = (messageData) => {
+    console.log('Message received in mock API:', messageData);
+    return Promise.resolve({ data: { message: 'Mock success' } });
+};
+
+export default { fetchProjects, fetchSkills, sendMessage };

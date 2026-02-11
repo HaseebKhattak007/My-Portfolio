@@ -21,7 +21,6 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
     const theme = useTheme();
 
-    const backendUrl = 'http://localhost:5000';
 
     useEffect(() => {
         const getData = async () => {
@@ -42,7 +41,7 @@ const Home = () => {
     }, []);
 
     const handleDownloadCV = () => {
-        window.open(`${backendUrl}/api/download-resume`, '_blank');
+        window.open(`${process.env.PUBLIC_URL}/files/resume.pdf`, '_blank');
     };
 
     const SectionTitle = ({ title, subtitle, align = 'center' }) => (
@@ -142,7 +141,7 @@ const Home = () => {
                                         zIndex: -1
                                     }} />
                                     <Avatar
-                                        src={`${backendUrl}/images/haseeb.jpg`}
+                                        src={`${process.env.PUBLIC_URL}/images/haseeb.jpg`}
                                         alt="Muhammad Haseeb"
                                         sx={{
                                             width: { xs: 260, sm: 300, md: 380 },
@@ -166,7 +165,7 @@ const Home = () => {
                                     letterSpacing: 2,
                                     fontSize: { xs: '1.2rem', md: '1.5rem' }
                                 }}>
-                                    Hello! I Am Muhammad Haseeb
+                                    Hello! I am Muhammad Haseeb
                                 </Typography>
                                 <Typography variant="h1" gutterBottom sx={{
                                     fontSize: { xs: '3rem', sm: '4rem', md: '5rem' },
@@ -295,6 +294,7 @@ const Home = () => {
                     <SectionTitle title="Education" />
                     <Grid container spacing={4}>
                         {[
+                            { title: "Master's In CS", inst: "FASTNU", date: "26 Jan 2026 - Present", desc: "Advanced studies in Computer Science" },
                             { title: "Bachelor's In CS", inst: "SZABIST", date: "2021-2025", desc: "Specializing in Full Stack Technologies" },
                             { title: "Intermediate (FSc)", inst: "Scienta Vision", date: "2018-2020", desc: "Pre-Engineering" },
                             { title: "Matriculation", inst: "Punjab Public", date: "2015-2017", desc: "Science Group" }
@@ -363,7 +363,7 @@ const Home = () => {
                                             }}>
                                                 <Box
                                                     component="img"
-                                                    src={project.image?.startsWith('http') ? project.image : `${backendUrl}/${project.image?.replace(/^\.\//, '')}`}
+                                                    src={`${process.env.PUBLIC_URL}/${project.image}`}
                                                     alt={project.title}
                                                     sx={{
                                                         width: '100%',

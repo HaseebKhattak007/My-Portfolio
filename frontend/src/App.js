@@ -25,7 +25,7 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Router>
+        <Router basename="/My-Portfolio">
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',

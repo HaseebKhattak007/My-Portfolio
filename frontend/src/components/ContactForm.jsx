@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, TextField, Button, Alert, Snackbar, Paper, Typography } from '@mui/material';
-import { sendMessage } from '../services/api';
+import emailjs from '@emailjs/browser';
 import SendIcon from '@mui/icons-material/Send';
 
 const ContactForm = () => {
@@ -16,13 +16,27 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+
+        // EMAILJS IDs
+        const SERVICE_ID = 'service_rnazbwr';    // EmailJS Service ID
+        const TEMPLATE_ID = 'template_ih861jc';  // EmailJS Template ID
+        const PUBLIC_KEY = 'WDMI0PdTX5j4mIjh7';    // EmailJS Public Key
+
         try {
-            const response = await sendMessage(formData);
-            setStatus({ type: 'success', message: response.data.message || 'Message sent successfully!' });
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                message: formData.message,
+                to_name: 'Haseeb', // Name
+            };
+
+            await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+            setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
             setFormData({ name: '', email: '', message: '' });
         } catch (error) {
-            const errorMsg = error.response?.data?.message || 'Failed to send message. Please try again.';
-            setStatus({ type: 'error', message: errorMsg });
+            console.error('EmailJS Error:', error);
+            setStatus({ type: 'error', message: 'Failed to send message. Please check your EmailJS configuration.' });
         } finally {
             setLoading(false);
             setOpen(true);

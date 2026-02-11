@@ -11,7 +11,7 @@ const Certificate = () => {
     const certificateInfo = {
         organization: "NAVTCC",
         course: "FULL STACK DEVELOPMENT (MERN)",
-        duration: "April 2025 - July 2025"
+        duration: "May 2025 - August 2025"
     };
 
     return (
