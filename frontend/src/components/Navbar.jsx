@@ -42,7 +42,7 @@ const Navbar = () => {
     };
 
     const handleDownloadCV = () => {
-        window.open(`${process.env.PUBLIC_URL}/files/resume.pdf`, '_blank');
+        window.open(`${process.env.PUBLIC_URL}/files/My-Resume.pdf`, '_blank');
     };
 
     return (
