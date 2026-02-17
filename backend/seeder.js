@@ -26,7 +26,7 @@ const projects = [
     {
         title: 'Vision Care Pro – Eye Health Monitoring App',
         description: 'A comprehensive health app featuring visual acuity tests, eye exercises, and wearable device integration. Developed as a Final Year Project.',
-        technologies: ['React Native', 'Node.js', 'Express', 'MongoDB'],
+        technologies: ['Dart', 'Flutter', 'FireBase', 'Andriod Studio'],
         githubLink: '',
         image: './images/VisionCare.png',
     },
